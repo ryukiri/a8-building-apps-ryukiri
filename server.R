@@ -6,6 +6,7 @@ library(rsconnect)
 # Read in data
 # setwd("C:/Users/Austin Quach/Google Drive/College/Sophomore/Info 201/Homework/a8-building-apps-ryukiri")
 setwd("~/Documents/Info 201/a8-building-apps-ryukiri")
+
 data <- read.table('data/cereal.tsv', stringsAsFactors = FALSE)
 data <- data %>% "["(.,2:78,)
 
@@ -50,7 +51,8 @@ shinyServer(function(input, output) {
     # Consturcts a bar plot with selected nutrition and rating of cerael
     ggplot(data = plot.data, aes(x=V1, y=nutrition)) + 
       geom_bar(stat = "identity") + 
-      theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))
+      theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5)) + 
+      labs(x = "Name", y = "Nutrition")
     
   })
 })
