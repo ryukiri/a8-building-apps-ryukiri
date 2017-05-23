@@ -1,10 +1,11 @@
 # server.R
 library(dplyr)
 library(plotly)
+library(rsconnect)
 
 # Read in data
 # setwd("C:/Users/Austin Quach/Google Drive/College/Sophomore/Info 201/Homework/a8-building-apps-ryukiri")
-setwd("~/Documents/a8-building-apps-ryukiri")
+setwd("~/Documents/Info 201/a8-building-apps-ryukiri")
 data <- read.table('data/cereal.tsv', stringsAsFactors = FALSE)
 data <- data %>% "["(.,2:78,)
 
